@@ -333,6 +333,9 @@ var renderPushChunks = function(chunks) {
                     a.href = url;
                     a.target = '_blank';
                     a.textContent = push.file_name || url;
+                    a.addEventListener('click', function(event) {
+                        safari.application.activeBrowserWindow.openTab().url = event.currentTarget.href;
+                    });
 
                     if (onLeft) {
                         a.classList.add('left');
