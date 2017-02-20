@@ -263,6 +263,9 @@ var renderPushChunks = function(chunks) {
                 var img = document.createElement('img');
                 img.className= 'chat-image';
                 img.style.maxWidth = maxWidth + 'px';
+                img.addEventListener('click', function(event) {
+                	safari.application.activeBrowserWindow.openTab().url = push.image_url;
+                });
 
                 if (push.file) {
                     if (!push.imgElement) {
